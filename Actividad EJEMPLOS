@@ -1,0 +1,57 @@
+print("                                   EJEMPLO 1")
+print("---------------------------------------------------------------------------------")
+
+class Animal:
+    nomAnimal = "Garfield"
+    pelo="Naranja"
+    orma="Pachonchito"
+    Genero="Macho"
+    
+    def obtener_nombre(self):
+        return self.nomAnimal
+    
+    def obtener_orma(self):
+        return self.orma
+
+gato = Animal()
+print(gato.obtener_nombre())
+print(gato.obtener_orma())
+
+print("================================================================================")
+
+print("                                  EJEMPLO 2")
+print("---------------------------------------------------------------------------------")
+ 
+class vehiculo:
+    nomVehiculo = "SUSUKI"
+    color="negro con azul"
+    llantas="2"
+    escencia="CLARO QUE SI"
+    
+    def obtener_nombre(self):
+        return self.nomVehiculo
+    
+    def obtener_llantas(self):
+        return self.llantas
+    
+    def establecer_nombre(self, nomVehiculo):
+        self.nomVehiculo = nomVehiculo
+        
+    def establecer_llantas(self,llantas):
+        self.llantas= llantas
+
+Moto = vehiculo()
+carro = vehiculo()
+carro.establecer_nombre("Camaro Chevrolet")
+carro.establecer_llantas("4")
+
+print("----------------VEHICULO CARRO----------------")
+print(carro.obtener_nombre())
+print("Numero de llantas",carro.obtener_llantas())
+print("")
+
+print("----------------VEHICULO MOTO---------------")
+print(Moto.obtener_nombre())
+print("Numero de llantas",Moto.obtener_llantas())
+
+print("================================================================================")
