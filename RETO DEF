@@ -1,0 +1,57 @@
+class Estudiante:
+    
+    def __init__(self, nombre):
+        self.nombre = nombre
+        self.notas = []
+ 
+    def nota_valida(self, nota):
+        return 0 <= nota <= 5
+    
+    def poner_notas(self):
+        for i in range(3):
+            while True:
+                
+                    nota = float(input(f"Joven de los jovenes deme la nota {i+1} de {self.nombre}: "))
+                    if self.nota_valida(nota):
+                        self.notas.append(nota)
+                        break
+                    else:
+                        print("Esa nota no es valida joven, debe ser  entre 0.0 a 5.0")
+               
+    
+    def calcular_definitiva(self):
+        return sum(self.notas) / len(self.notas)
+    
+    def clasificar(self, definitiva):
+        if definitiva >= 4.5:
+            return "Puntaje superior sigue asi"
+        elif definitiva >= 3.5:
+            return "hmmmm es un puntaje bueno pero podria ser mejor"
+        elif definitiva >= 3.0:
+            return "Puntaje Aceptable, pero por poco y no pasas eh"
+        else:
+            return "MALA NOTICIA MI GENTE, CREO QUE TAS SUPER JOCHE (Puntaje bajito)"
+        
+    def calcular(self):
+        self.poner_notas()
+        definitiva = self.calcular_definitiva()
+        clasificacion = self.clasificar(definitiva)
+
+      
+       
+         
+        
+def main():
+    estudiantes = []
+    cantidad = int(input("¿Cuántos estudiantes vamos a registrar hoy??  :3\n"))
+        
+    for i in range(cantidad):
+        nombre = input(f"\n Ingrese el nombre del cri@, joven, niñ@,chic@ o como prefiera decirle al estudiante numero {i+1}:\n ")
+        estudiante = Estudiante(nombre)
+        estudiante.calcular()
+        estudiantes.append(estudiante)
+        
+
+
+print(main())
+    
